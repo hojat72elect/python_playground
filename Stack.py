@@ -1,4 +1,6 @@
 class Stack:
+
+    # We're creating the stack with the help of a list.
     def __init__(self):
         self.items = []
 
@@ -7,7 +9,7 @@ class Stack:
 
     def pop(self):
         if self.isEmpty():
-            raise RuntimeError("Attempt to pop an empty stack")
+            raise RuntimeError("It's impossible to pop an empty stack")
 
         topIndex = len(self.items) - 1
         item = self.items[topIndex]
@@ -17,10 +19,10 @@ class Stack:
     def push(self, item):
         self.items.append(item)
 
-    # looking into the item that we'll receive if we pop the stack.
+    # The intent fo [peek] is to be safer than [pop] so peeking into an empty stack shouldn't throw an error.
     def peek(self):
         if self.isEmpty():
-            raise RuntimeError("Attempt to peek into an empty stack")
+            return None
 
         topIndex = len(self.items) - 1
         return self.items[topIndex]
