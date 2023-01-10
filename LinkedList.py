@@ -49,12 +49,3 @@ class LinkedList:
             node = node.nextNode
         nodes.append("None")  # as a sign that linked list has finished.
         return " -> ".join(nodes)
-
-
-def testLinkedList():
-    my_linked_list = LinkedList(["7", "2", "9"])
-    print(my_linked_list)
-
-
-if __name__ == "__main__":
-    testLinkedList()

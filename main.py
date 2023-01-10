@@ -1,8 +1,5 @@
 import Stack
-
-
-def print_hi(name):
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from LinkedList import LinkedList
 
 
 def test_stack():
@@ -25,5 +22,11 @@ def test_stack():
     secondStack.peek()
 
 
+def test_linked_list():
+    my_linked_list = LinkedList(["7", "2", "9"])
+    print(my_linked_list)
+
+
 if __name__ == '__main__':
     test_stack()
+    test_linked_list()
