@@ -1,8 +1,9 @@
 import Stack
+from BinarySearchTree import BinarySearchTree
 from LinkedList import LinkedList
 
 
-def test_stack():
+def testStack():
     firstStack = Stack.Stack()
     for num in list(range(34)):
         firstStack.push(num)
@@ -22,11 +23,25 @@ def test_stack():
     secondStack.peek()
 
 
-def test_linked_list():
+def testLinkedList():
     my_linked_list = LinkedList(["7", "2", "9"])
     print(my_linked_list)
 
 
+def testBinarySearchTree():
+    rawInputs = input("Enter a list of numbers: ")
+    inputsList = rawInputs.split()
+
+    tree1 = BinarySearchTree()
+
+    for x in inputsList:
+        tree1.insert(float(x))
+
+    for x in tree1:
+        print(x)
+
+
 if __name__ == '__main__':
-    test_stack()
-    test_linked_list()
+    testStack()
+    testLinkedList()
+    testBinarySearchTree()
