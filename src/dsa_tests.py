@@ -1,10 +1,10 @@
-import Stack
-from BinarySearchTree import BinarySearchTree
-from LinkedList import LinkedList
+from dsa.Stack import Stack
+from dsa.BinarySearchTree import BinarySearchTree
+from dsa.LinkedList import LinkedList
 
 
 def testStack():
-    firstStack = Stack.Stack()
+    firstStack = Stack()
     for num in list(range(34)):
         firstStack.push(num)
     print(firstStack.pop())
@@ -17,7 +17,7 @@ def testStack():
     print(firstStack.peek())
     print(firstStack.pop())
 
-    secondStack = Stack.Stack()
+    secondStack = Stack()
     secondStack.push(3)
     secondStack.pop()
     secondStack.peek()
