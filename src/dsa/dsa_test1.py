@@ -1,6 +1,6 @@
-from dsa.Stack import Stack
-from dsa.BinarySearchTree import BinarySearchTree
-from dsa.LinkedList import LinkedList
+from Stack import Stack
+from BinarySearchTree import BinarySearchTree
+from LinkedList import LinkedList
 
 
 def testStack():
