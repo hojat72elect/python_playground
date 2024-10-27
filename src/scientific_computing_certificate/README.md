@@ -1,0 +1,1 @@
+Here I write my answers to projects in [this course](https://www.freecodecamp.org/learn/scientific-computing-with-python/), for getting their certificate.
