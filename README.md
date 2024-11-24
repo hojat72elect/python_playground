@@ -1,1 +1,1 @@
-This repo contains all of my python projects.
+Here I am experimenting with various Python libraries; and see what i can make with them.
