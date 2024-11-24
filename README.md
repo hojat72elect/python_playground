@@ -1,1 +1,1 @@
-Here I am experimenting with various Python libraries; and see what i can make with them.
+Here I am experimenting with various Python libraries; and see what I can make with them.
