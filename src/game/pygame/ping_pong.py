@@ -31,13 +31,15 @@ score_player_right = 0
 
 # Game loop
 while True:
+    # read all input keys
+    keys = pygame.key.get_pressed()
+
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+        if event.type == pygame.QUIT or keys[pygame.K_ESCAPE]:
             pygame.quit()
             sys.exit()
 
     # Move the paddles
-    keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:
         paddle1_y -= 5
     if keys[pygame.K_s]:
