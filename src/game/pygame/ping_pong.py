@@ -70,9 +70,9 @@ while True:
 
     # Draw everything
     screen.fill(BLACK)
-    pygame.draw.rect(screen, WHITE, (0, paddle1_y, PADDLE_WIDTH, PADDLE_HEIGHT))
-    pygame.draw.rect(screen, WHITE, (WIDTH - PADDLE_WIDTH, paddle2_y, PADDLE_WIDTH, PADDLE_HEIGHT))
-    pygame.draw.circle(screen, WHITE, (int(ball.x), int(ball.y)), ball.radius)
+    pygame.draw.rect(screen, WHITE, (0, paddle1_y, PADDLE_WIDTH, PADDLE_HEIGHT))  # paddle on left
+    pygame.draw.rect(screen, WHITE, (WIDTH - PADDLE_WIDTH, paddle2_y, PADDLE_WIDTH, PADDLE_HEIGHT))  # paddle on right
+    pygame.draw.circle(screen, WHITE, (ball.x, ball.y), ball.radius)
     text = font.render(f"{score_player_left} - {score_player_right}", True, WHITE)
     screen.blit(text, (WIDTH / 2 - text.get_width() / 2, 10))
 
