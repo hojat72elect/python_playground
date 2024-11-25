@@ -1,14 +1,15 @@
 import sys
 import pygame
 from src.game.pygame.Ball import Ball
+from src.game.pygame.Paddle import Paddle
 
 # initialize pygame
 pygame.init()
 
-WIDTH = 800
-HEIGHT = 600
-PADDLE_WIDTH = 10
-PADDLE_HEIGHT = 100
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+# PADDLE_WIDTH = 10
+# PADDLE_HEIGHT = 100
 FPS = 60
 
 # Set up some colors
@@ -16,18 +17,15 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
 # Set up the display
-screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.RESIZABLE)
 
 # Set up the font
 font = pygame.font.Font(None, 36)
-ball = Ball(WIDTH / 2, HEIGHT / 2, 5, 5, 20)
+ball = Ball(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 5, 5, 20)
 
 # Set up the paddles
-paddle1_y = paddle2_y = HEIGHT / 2 - PADDLE_HEIGHT / 2
-
-# Set up the score
-score_player_left = 0
-score_player_right = 0
+paddle1 = Paddle(0, SCREEN_HEIGHT / 2 - 50, 10, 100, 0)
+paddle2 = Paddle(SCREEN_WIDTH - 10, SCREEN_HEIGHT / 2 - 50, 10, 100, 0)
 
 # Game loop
 while True:
@@ -41,42 +39,43 @@ while True:
 
     # Move the paddles
     if keys[pygame.K_w]:
-        paddle1_y -= 5
+        paddle1.move_up()
     if keys[pygame.K_s]:
-        paddle1_y += 5
+        paddle1.move_down()
     if keys[pygame.K_UP]:
-        paddle2_y -= 5
+        paddle2.move_up()
     if keys[pygame.K_DOWN]:
-        paddle2_y += 5
+        paddle2.move_down()
 
     # Move the ball
     ball.move()
 
     # Collision with walls (up and down)
-    if ball.y < 0 or ball.y > HEIGHT - ball.radius:
+    if ball.y < 0 or ball.y > SCREEN_HEIGHT - ball.radius:
         ball.bounce_y()
 
     # Collision of the ball with paddles
-    if ball.x < PADDLE_WIDTH + ball.radius and paddle1_y < ball.y < paddle1_y + PADDLE_HEIGHT:
+    if ball.x <= paddle1.width + ball.radius and paddle1.y < ball.y < paddle1.y + paddle1.height:
         ball.bounce_x()
-    elif ball.x > WIDTH - PADDLE_WIDTH - ball.radius and paddle2_y < ball.y < paddle2_y + PADDLE_HEIGHT:
+    elif ball.x >= SCREEN_WIDTH - paddle2.width - ball.radius and paddle2.y < ball.y < paddle2.y + paddle2.height:
         ball.bounce_x()
 
     # scoring the ball
-    if ball.x < 0:
-        score_player_right += 1
-        ball.reset(WIDTH / 2, HEIGHT / 2)
-    elif ball.x > WIDTH - ball.radius:
-        score_player_left += 1
-        ball.reset(WIDTH / 2, HEIGHT / 2)
+    if ball.x <= 0:
+        paddle2.score += 1
+        ball.reset(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    elif ball.x >= SCREEN_WIDTH:
+        paddle1.score += 1
+        ball.reset(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     # Draw everything
     screen.fill(BLACK)
-    pygame.draw.rect(screen, WHITE, (0, paddle1_y, PADDLE_WIDTH, PADDLE_HEIGHT))  # paddle on left
-    pygame.draw.rect(screen, WHITE, (WIDTH - PADDLE_WIDTH, paddle2_y, PADDLE_WIDTH, PADDLE_HEIGHT))  # paddle on right
+    pygame.draw.rect(screen, WHITE, (0, paddle1.y, paddle1.width, paddle1.height))  # paddle on left
+    pygame.draw.rect(screen, WHITE,
+                     (SCREEN_WIDTH - paddle2.width, paddle2.y, paddle2.width, paddle2.height))  # paddle on right
     pygame.draw.circle(screen, WHITE, (ball.x, ball.y), ball.radius)
-    text = font.render(f"{score_player_left} - {score_player_right}", True, WHITE)
-    screen.blit(text, (WIDTH / 2 - text.get_width() / 2, 10))
+    text = font.render(f"{paddle1.score} - {paddle2.score}", True, WHITE)
+    screen.blit(text, (SCREEN_WIDTH / 2 - text.get_width() / 2, 10))
 
     # Update the display
     pygame.display.flip()
