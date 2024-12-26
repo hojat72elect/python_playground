@@ -1,7 +1,7 @@
 import sys
 import pygame
-from src.game.pygame.Ball import Ball
-from src.game.pygame.Paddle import Paddle
+from src.game.pygame.ping_pong_game.Ball import Ball
+from src.game.pygame.ping_pong_game.Paddle import Paddle
 
 # initialize pygame
 pygame.init()
