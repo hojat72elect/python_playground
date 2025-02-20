@@ -1,5 +1,9 @@
 import cv2
 
+"""
+Load an image, and apply a negative filter to it (it inverts all the colors of the image, sets all black pixels to white and vice versa).
+"""
+
 if __name__ == '__main__':
     image_model = cv2.imread("./resources/pics/model_1.png")
 
