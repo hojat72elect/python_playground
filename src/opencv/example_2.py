@@ -7,7 +7,7 @@ Load an image, show it to the user, and then save it to the disk.
 """
 
 if __name__ == '__main__':
-    image1 = cv2.imread("./resources/pics/model_1.png")
+    image1 = cv2.imread("resources/pics/model_1.png")
 
     if image1 is None:
         sys.exit("Could not read the image.")

@@ -5,7 +5,7 @@ Load an image, and apply a negative filter to it (it inverts all the colors of t
 """
 
 if __name__ == '__main__':
-    image_model = cv2.imread("./resources/pics/model_1.png")
+    image_model = cv2.imread("resources/pics/model_1.png")
 
     # Apply a negative filter to the image
     negative_image = cv2.bitwise_not(image_model)
