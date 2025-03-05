@@ -41,7 +41,30 @@ def strings_in_python():
 
 
 def lists_in_python():
-    pass
+    list_of_squares = [1, 4, 9, 16, 25]
+    print(list_of_squares)
+
+    # indexing in lists
+    print(list_of_squares[0])
+    print(list_of_squares[-1])
+
+    # slicing in lists
+    print(list_of_squares[-3:])
+
+    # Concatenating lists together
+    print(list_of_squares + [36, 49, 64, 81, 100])
+
+    list_of_squares.append(36)
+    print(list_of_squares)
+
+    # be careful of multiple references to the same list:
+    second_reference_to_the_list_of_squares = list_of_squares
+    print(id(list_of_squares) == id(second_reference_to_the_list_of_squares))
+    second_reference_to_the_list_of_squares.append(49)
+    print(list_of_squares)
+
+    # The builtin function len() works on lists as well
+    print(len(list_of_squares))
 
 
 if __name__ == '__main__':
