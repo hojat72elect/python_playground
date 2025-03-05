@@ -2,3 +2,8 @@ __pycache__
 src/dsa/__pycache__
 .idea
 src/pytorch/data
+*.c
+*.exp
+*.lib
+*.pyd
+*.obj
