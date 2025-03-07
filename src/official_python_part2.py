@@ -10,5 +10,26 @@ def fibunacci_sequence(n: int):
 
     return output_series
 
+
+def input_analyzer():
+    """
+    will ask you to give it an integer and will print out some info according to what you have entered as input
+    """
+    print("Let's play a 'guess the number' game")
+    try:
+        user_input = int(input("please give me an integer number : "))
+    except ValueError:
+        print("Oh dude! i asked you to enter an integer !!!!")
+        return
+
+    if user_input > 42:
+        print("The number I have in mind is less than what you have entered.")
+    elif user_input < 42:
+        print("The number I had in mind is bigger than what you entered.")
+    else:
+        print("congratulations! you guessed correctly! The number was 42!!!")
+
+
 if __name__ == '__main__':
-    print(fibunacci_sequence(1_000_000))
+    # print(fibunacci_sequence(1_000_000))
+    input_analyzer()
