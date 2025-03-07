@@ -30,6 +30,40 @@ def input_analyzer():
         print("congratulations! you guessed correctly! The number was 42!!!")
 
 
+def iterating_through_list():
+    my_favorite_books = ["The Harry Potter series", "Darren Shan", "The old man and the sea"]
+    for book in my_favorite_books:
+        print(book, len(book))
+
+
+def iterating_through_dictionary():
+    users = {
+        'Hans': 'active',
+        'Éléonore': 'inactive',
+        'Hojat': 'active'
+    }
+    active_users = {}
+    for user, status in users.items():
+        if status == 'active':
+            active_users[user] = status
+    print(f"the original users: {users}")
+    print(f"The active users: {active_users}")
+
+
+def range_example_1(range_end: int):
+    for i in range(range_end):
+        print(f"I love you for the {i}th time ......")
+
+
+def range_example_2(range_start: int, range_end: int):
+    for i in range(range_start, range_end):
+        print(f"And I also love myself for the {i}th time")
+
+
 if __name__ == '__main__':
-    # print(fibunacci_sequence(1_000_000))
+    print(fibunacci_sequence(1_000_000))
     input_analyzer()
+    iterating_through_list()
+    iterating_through_dictionary()
+    range_example_1(5)
+    range_example_2(5, 10)
