@@ -1,7 +1,6 @@
 from BinarySearchTree import BinarySearchTree
 
-
-def testBinarySearchTree():
+if __name__ == '__main__':
     rawInputs = input("Enter a list of numbers: ")
     inputsList = rawInputs.split()
 
@@ -12,7 +11,3 @@ def testBinarySearchTree():
 
     for x in tree1:
         print(x)
-
-
-if __name__ == '__main__':
-    testBinarySearchTree()
