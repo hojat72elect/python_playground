@@ -5,5 +5,4 @@ The stuff I have implemented so far:
 
 <ol>
 <li>Stack</li>
-<li> Linked List</li>
 </ol>

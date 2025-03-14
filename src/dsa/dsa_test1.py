@@ -1,31 +1,4 @@
-from Stack import Stack
 from BinarySearchTree import BinarySearchTree
-from LinkedList import LinkedList
-
-
-def testStack():
-    firstStack = Stack()
-    for num in list(range(34)):
-        firstStack.push(num)
-    print(firstStack.pop())
-    print(firstStack.pop())
-    print(firstStack.pop())
-    print(firstStack.pop())
-    print(firstStack.pop())
-
-    firstStack.push(-21)
-    print(firstStack.peek())
-    print(firstStack.pop())
-
-    secondStack = Stack()
-    secondStack.push(3)
-    secondStack.pop()
-    secondStack.peek()
-
-
-def testLinkedList():
-    my_linked_list = LinkedList(["7", "2", "9"])
-    print(my_linked_list)
 
 
 def testBinarySearchTree():
@@ -42,6 +15,4 @@ def testBinarySearchTree():
 
 
 if __name__ == '__main__':
-    testStack()
-    testLinkedList()
     testBinarySearchTree()
