@@ -14,6 +14,9 @@ def linked_list_test1():
         print(current_node.data, end=" -> ")
         current_node = current_node.next
 
+    print(f"\nDoes this linked list contain the number 7 ? {first_linked_list.does_contain(7)}")
+    print(f"Does this linked list contain the number 17 ? {first_linked_list.does_contain(17)}")
+
 
 if __name__ == '__main__':
     linked_list_test1()

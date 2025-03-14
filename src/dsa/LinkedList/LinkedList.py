@@ -27,4 +27,10 @@ class LinkedList:
             self.head = new_node
             self.tail = new_node
 
-
+    def does_contain(self, data) -> bool:
+        current_node = self.head
+        while current_node:
+            if current_node.data == data:
+                return True
+            current_node = current_node.next
+        return False
