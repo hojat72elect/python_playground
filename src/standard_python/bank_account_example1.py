@@ -1,4 +1,4 @@
-from src.python.BankAccount import BankAccount
+from src.standard_python.BankAccount import BankAccount
 
 if __name__ == '__main__':
 

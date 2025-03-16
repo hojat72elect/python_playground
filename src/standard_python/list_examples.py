@@ -1,5 +1,5 @@
 """
-Here we will play with the most important stuff we can do to a python list.
+Here we will play with the most important stuff we can do to a standard_python list.
 """
 
 

@@ -1,6 +1,6 @@
 """
 This is a Cython implementation of a prime number finder.
-The logic is exactly like the python equivalent, just the implementation is in another language.
+The logic is exactly like the standard_python equivalent, just the implementation is in another language.
 """
 def get_primes(int n):
     cdef int i, j

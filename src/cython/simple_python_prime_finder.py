@@ -1,5 +1,5 @@
 """
-This function is pure python for finding the first n prime numbers.
+This function is pure standard_python for finding the first n prime numbers.
 """
 def get_primes(n):
     if n < 1:

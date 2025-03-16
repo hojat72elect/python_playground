@@ -27,7 +27,7 @@ if __name__ == '__main__':
     list1 = [3, 4, 7, 8, 5, 3, 4, 9, 8, 5]
     print(list1)
     print(type(list1))
-    array4 = numpy.array(list1)  # Converting a bare python list into a numpy array
+    array4 = numpy.array(list1)  # Converting a bare standard_python list into a numpy array
     print(array4)
     print(type(array4))
     print(array4.shape)
