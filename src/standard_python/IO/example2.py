@@ -27,7 +27,7 @@ if __name__ == '__main__':
     # Yet another example of formatted strings in Python
     print(f"The value of Pi rounded 3 places after the decimal point is approximately {math.pi:.3f}.")
 
-    # We can use professional formatted strings for making columns line up in complex printings
+    # We can use professionally formatted strings for making columns line up in complex printings
     table = {"Sjoerd": 4127, "Jack": 4098, "Dcab": 7678}
     for name, phone in table.items():
         print(f"{name:10}  ==> {phone:10d}")
