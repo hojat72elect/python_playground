@@ -8,3 +8,4 @@ src/pytorch/data
 *.pyd
 *.obj
 *.tmp
+*.ipynb~
