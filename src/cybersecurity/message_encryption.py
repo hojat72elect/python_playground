@@ -17,12 +17,30 @@ def decrypt_message(key, encrypted_message):
     return decrypted_message
 
 
+class EncryptionHandler:
+    def __init__(self, key=None):
+        self.key = key if key is not None else self.generate_key()
+        self.cipher_suite = Fernet(self.key)
+
+    def generate_key(self):
+        return Fernet.generate_key()
+
+    def encrypt_message(self, message):
+        if not isinstance(message, str):
+            raise ValueError("Message must be a string")
+        return self.cipher_suite.encrypt(message.encode())
+
+    def decrypt_message(self, encrypted_message):
+        if not isinstance(encrypted_message, bytes):
+            raise ValueError("Encrypted message must be bytes")
+        return self.cipher_suite.decrypt(encrypted_message).decode()
+
+
 if __name__ == '__main__':
-    key = generate_key()
-    input_message = input("Please enter a message to be encrypted: ")
+    encryption_handler = EncryptionHandler()
 
-    encrypted_message = encrypt_message(key, input_message)
-    print(f"Encrypted message : {encrypted_message}")
-
-    decrypted_message = decrypt_message(key, encrypted_message)
-    print(f"Decrypted message : {decrypted_message}")
+    input_message = input("Enter a message : ")
+    encrypted = encryption_handler.encrypt_message(input_message)
+    print(f"The encrypted message is this : {encrypted}")
+    decrypted = encryption_handler.decrypt_message(encrypted)
+    print(f"The decrypted message is this : {decrypted}")
